@@ -38,7 +38,7 @@ public class Sismologia {
                 Sismologia.sismoMasIntenso(sismos);
             }
             case 2: if (opcion==2){
-                Sismologia.diasSismosgrandes(sismos, dias);
+                Sismologia.diasSismosgrandes(sismos);
             }
             case 3: if (opcion==3)
                 Sismologia.alertaEscaladaSismica(sismos);
@@ -80,10 +80,10 @@ public class Sismologia {
         return sismos;
     }
 
-    public static double [][] sismosRandom (double [][] sismos, int dias){
+    public static double [][] sismosRandom (double [][] sismos){
         Random azar = new Random(19);
 
-        for (int i=0; i<dias; i++){
+        for (int i=0; i<sismos.length; i++){
             for (int j=0; j<24; j++){
                 sismos[i][j] = Math.random()*9.5;
             }
