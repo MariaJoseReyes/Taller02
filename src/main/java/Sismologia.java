@@ -1,13 +1,16 @@
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import java.util.Random;
 public class Sismologia {
+
     public static void main(String[] args) {
 
         int dias = Sismologia.cantidadDias();
         Sismologia.crearArreglo(dias);
+
         mostrarOpciones();
+
         int opcion = elegirOpcion();
         casoOpcion(opcion);
     }
@@ -42,8 +45,6 @@ public class Sismologia {
             }
             case 3: if (opcion==3)
                 Sismologia.alertaEscaladaSismica(sismos);
-
-
         }
     }
 
@@ -74,16 +75,16 @@ public class Sismologia {
         }
         return cant;
     }
-    
+
     public static double[][] crearArreglo(int n){
-        double [][] sismos = double int[n][24];
+        double [][] sismos = new double [n][24];
         return sismos;
     }
 
-    public static double [][] sismosRandom (double [][] sismos){
-        Random azar = new Random(19);
+    public static double [][] sismosRandom (double [][] sismos, int dias){
+        Random azar = new Random();
 
-        for (int i=0; i<sismos.length; i++){
+        for (int i=0; i<dias; i++){
             for (int j=0; j<24; j++){
                 sismos[i][j] = Math.random()*9.5;
             }
@@ -91,5 +92,17 @@ public class Sismologia {
         return sismos;
     }
 
-    
+    public static void diasSismosgrandes (double[][] sismos){
+        int acumdias =0;
+        for(int i=0; i< sismos.length; i++){
+            for (int j=0; j<24; j++){
+                if (sismos[i][j]>= 5.5){
+                    acumdias= acumdias+1;
+                }
+            }
+        }
+        System.out.println("La cantidad de dias que hubieron sobre o igual a 5.5 grados en la escala de Ritcher fueron: ");
+        System.out.println(acumdias);
+    }
+
 }
