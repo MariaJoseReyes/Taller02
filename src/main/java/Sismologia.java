@@ -23,6 +23,22 @@ public class Sismologia {
         }
         return cant;
     }
+    
+    public static double[][] crearArreglo(int n){
+        double [][] sismos = double int[n][24];
+        return sismos;
+    }
+
+    public static double [][] sismosRandom (double [][] sismos, int dias){
+        Random azar = new Random(19);
+
+        for (int i=0; i<dias; i++){
+            for (int j=0; j<24; j++){
+                sismos[i][j] = Math.random()*9.5;
+            }
+        }
+        return sismos;
+    }
 
     
 }
