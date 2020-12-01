@@ -34,10 +34,32 @@ public class Taller2UnitTesting {
 
         for(int i=0; i<sismos.length; i++){
             for(int j=0; j<24; j++) {
-                sismos[i][j] = Math.random();
+                sismos[i][j] = Math.random()*9.5;
             }
         }
         return sismos;
+    }
+
+    public static void sismoMasIntenso(double [][] sismos) {
+        double intensidad = 0;
+        int hora = 0;
+        int dia = 0;
+        for(int i=0; i<sismos.length; i++){
+            for(int j=0; j<24; j++) {
+                if(sismos[i][j] > intensidad) {
+                    intensidad = sismos[i][j];
+                    dia = i+1;
+                    hora = j;
+                }
+            }
+        }
+        System.out.println("El sismo más intenso registrado fue de "+intensidad+" grados, el día "+i+" a las "+j":00 horas");
+    }
+
+    //Método 2
+
+    public static void alertaEscaladaSismica(double [][] sismos) {
+
     }
 }
 
