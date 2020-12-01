@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Random;
-public class Sismologia {
+public class Taller02UnitTesting {
 
     public static void main(String[] args) {
 
@@ -38,13 +38,13 @@ public class Sismologia {
     public static void casoOpcion(int opcion, double[][]sismos){
         switch (opcion){
             case 1: if (opcion==1){
-                Sismologia.sismoMasIntenso(sismos);
+                 Taller02UnitTesting.sismoMasIntenso(sismos);
             }
             case 2: if (opcion==2){
-                Sismologia.diasSismosgrandes(sismos);
+                 Taller02UnitTesting.diasSismosgrandes(sismos);
             }
             case 3: if (opcion==3)
-                Sismologia.alertaEscaladaSismica(sismos);
+                 Taller02UnitTesting.alertaEscaladaSismica(sismos);
         }
     }
 
