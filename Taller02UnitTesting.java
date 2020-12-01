@@ -5,8 +5,8 @@ public class Taller02UnitTesting {
     
     public static void main(String[] args) {
 
-        int dias = Sismologia.cantidadDias();
-        Sismologia.crearArreglo(dias);
+        int dias = cantidadDias();
+        crearArreglo(dias);
 
         mostrarOpciones();
 
@@ -37,13 +37,13 @@ public class Taller02UnitTesting {
     public static void casoOpcion(int opcion, double[][]sismos){
         switch (opcion){
             case 1: if (opcion==1){
-                Sismologia.sismoMasIntenso(sismos);
+                sismoMasIntenso(sismos);
             }
             case 2: if (opcion==2){
-                Sismologia.diasSismosgrandes(sismos);
+                diasSismosgrandes(sismos);
             }
             case 3: if (opcion==3)
-                Sismologia.alertaEscaladaSismica(sismos);
+                alertaEscaladaSismica(sismos);
 
         }
     }
